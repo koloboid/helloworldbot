@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  electrobot:
+    image: koloboid/helloworldbot
+    environment:
+      - TG_TOKEN=${TG_TOKEN}
+      - REPLY=Світло є!
+
+
+        Якщо я не відповідаю на запит протягом 15 секунд - значить нема
