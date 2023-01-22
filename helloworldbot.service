@@ -1,0 +1,15 @@
+[Unit]
+Description=Helloworldbot
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=0
+Restart=always
+WorkingDirectory=/opt/helloworldbot
+ExecStartPre=-/usr/local/bin/docker-compose down
+ExecStartPre=-/usr/local/bin/docker-compose pull
+ExecStart=/usr/local/bin/docker-compose up
+
+[Install]
+WantedBy=multi-user.target

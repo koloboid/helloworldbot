@@ -5,7 +5,7 @@
     "scripts": {
         "start": "tsnd ./src/main | uk-log",
         "build": "tsc && echo Compiled successfully",
-        "docker": "npm run build && docker build --pull -t koloboid/helloworldbot . && read && docker push koloboid/helloworldbot"
+        "docker": "npm run build && docker buildx build --platform linux/arm64/v8 --pull -t koloboid/helloworldbot . && read && docker push koloboid/helloworldbot"
     },
     "devDependencies": {
         "@types/node": "^18.11.18",
